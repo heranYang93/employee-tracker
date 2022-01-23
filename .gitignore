@@ -1,3 +1,6 @@
+# Task requirement
+__requirement__
+
 # Logs
 logs
 *.log
@@ -74,3 +77,6 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+# MAC
+.DS_Store
