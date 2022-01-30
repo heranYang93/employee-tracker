@@ -1,7 +1,7 @@
 const inq = require("inquirer");
 const sql = require("mysql2");
 
-const db = mysql.createConnection(
+const db = sql.createConnection(
   {
     host: process.env.HOST,
     user: process.env.USER,
@@ -11,6 +11,9 @@ const db = mysql.createConnection(
   console.log(`Connected to the classlist_db database.`)
 );
 
-db.query("SELECT * FROM students", function (err, results) {
-  console.log(results);
-});
+// db.query("SELECT * FROM students", function (err, results) {
+//   console.log(results);
+// });
+const init = function () {};
+
+init();
