@@ -1,6 +1,5 @@
 USE hr_db;
 
-CREATE VIEW employee_allIn AS
 SELECT
     emprm.id,
     emprm.first_name,

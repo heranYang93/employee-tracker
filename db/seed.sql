@@ -1,7 +1,7 @@
 INSERT INTO departments
-VALUES (1, "Sales"),(2, "Engineering"),(3, "Finance"),(4, "Legal");
+VALUES ("Sales"),("Engineering"),("Finance"),("Legal");
 
-INSERT INTO roles 
+INSERT INTO roles
 VALUES
     (1, "Salesperson",80000,1),
     (2, "Lead Engineer",150000,2),

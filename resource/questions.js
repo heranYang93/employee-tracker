@@ -1,3 +1,11 @@
+const query = require("./query");
+
+const returnToMain = {
+  type: "confirm",
+  message: "Return to the home page?",
+  name: "return",
+};
+
 const startQuestion = {
   type: "list",
   message: "Select options below",
@@ -10,16 +18,17 @@ const startQuestion = {
     "add a role",
     "add an employee",
     "update an employee",
+    "exit",
   ],
 };
 
-const departmentQuestion = {
+const newDepartmentArr = {
   type: "input",
   message: "Give a name to the new department",
   name: "newDepartmentName",
 };
 
-const roleQuestionArr = [
+const newRoleArr = [
   {
     type: "input",
     message: "Give a name to the new role",
@@ -31,13 +40,14 @@ const roleQuestionArr = [
     name: "newRoleSalary",
   },
   {
-    type: "input",
+    type: "list",
     message: "To which department does this new row belong?",
     name: "newRoleDepartment",
+    choices: [],
   },
 ];
 
-const newEmployeeQuestionArr = [
+const newEmployeeArr = [
   {
     type: "input",
     message: "Enter new employee's first name",
@@ -49,46 +59,23 @@ const newEmployeeQuestionArr = [
     name: "newEmpLN",
   },
   {
-    type: "input",
-    message: "Enter new employee's role",
+    type: "list",
+    message: "Select the role",
     name: "newEmpRole",
+    choices: [],
   },
   {
-    type: "input",
-    message: "Enter new employee's manager",
-    name: "newEmpManager",
+    type: "list",
+    message: `Select a manager`,
+    name: "newEmpMan",
+    choices: [],
   },
 ];
 
-class updateEmployee {
-  construct() {
-    this.questionArr = [
-      {
-        type: "list",
-        message: "Whose status do you wish to update",
-        name: "updateEmpName",
-        choices: [],
-      },
-      {
-        type: "list",
-        message: `Assign a new role`,
-        name: "updateEmpRole",
-        choices: [],
-      },
-    ];
-  }
-
-  updateQ(employeeArr, roleArr) {
-    this.questionArr[0].choices = employeeArr;
-    this.questionArr[1].choices = roleArr;
-  }
-}
-
 module.exports = {
+  returnToMain,
   startQuestion,
-  departmentQuestion,
-  departmentQuestion,
-  roleQuestionArr,
-  newEmployeeQuestionArr,
-  updateEmployee,
+  newDepartmentArr,
+  newRoleArr,
+  newEmployeeArr,
 };
