@@ -12,6 +12,11 @@ const db = sql.createConnection({
   database: process.env.DB,
 });
 
+db.connect((err) => {
+  if (err) throw err;
+  console.log(`connected as a id ${db.threadId}`);
+});
+
 const init = async function () {
   await inq.prompt(q.startQuestion).then((r) => {
     switch (r.op) {

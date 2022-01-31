@@ -18,6 +18,7 @@ const startQuestion = {
     "add a role",
     "add an employee",
     "update an employee",
+    "update an employee's manager",
     "exit",
   ],
 };
@@ -87,6 +88,21 @@ const updateEmployeeArr = [
   },
 ];
 
+// const updateManagerArr = [
+//   {
+//     type: "list",
+//     message: "Who's manger should be updated?",
+//     name: "empName",
+//     choices: [],
+//   },
+//   {
+//     type: "list",
+//     message: "Who is the new manager?",
+//     name: "newMan",
+//     choices: [],
+//   },
+// ];
+
 module.exports = {
   returnToMain,
   startQuestion,
@@ -94,4 +110,5 @@ module.exports = {
   newRoleArr,
   newEmployeeArr,
   updateEmployeeArr,
+  updateManagerArr,
 };

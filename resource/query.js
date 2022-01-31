@@ -22,6 +22,8 @@ const addEmployee =
 
 const updateEmployee = "UPDATE employees SET role_id = ? WHERE id = ?";
 
+// const updateManager = "UPDATE employees SET manager_id = ? WHERE id = ?";
+
 module.exports = {
   employeeView,
   employeeSimpleView,
@@ -32,4 +34,5 @@ module.exports = {
   addDepartment,
   addEmployee,
   updateEmployee,
+  // updateManager,
 };
