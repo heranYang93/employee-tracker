@@ -4,7 +4,7 @@
   <p align="center">
     This CLI app will generate a team profile following a preset format.
     <br />
-    <a href="https://github.com/heranYang93/employee-tracker/blob/main/demo/demo_basicFunction.mov">View Demo</a>
+    <a href="https://github.com/heranYang93/employee-tracker/blob/main/demo/demo_basicFunction.mp4">View Demo</a>
     ·
     <a href="https://github.com/heranyang93/employee-tracker/issues">Report Bug</a>
     ·
