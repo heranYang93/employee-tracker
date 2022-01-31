@@ -18,7 +18,6 @@ const startQuestion = {
     "add a role",
     "add an employee",
     "update an employee",
-    "update an employee's manager",
     "exit",
   ],
 };
@@ -110,5 +109,5 @@ module.exports = {
   newRoleArr,
   newEmployeeArr,
   updateEmployeeArr,
-  updateManagerArr,
+  // updateManagerArr,
 };
