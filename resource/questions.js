@@ -72,10 +72,26 @@ const newEmployeeArr = [
   },
 ];
 
+const updateEmployeeArr = [
+  {
+    type: "list",
+    message: "Who's role should be updated?",
+    name: "updateEmpName",
+    choices: [],
+  },
+  {
+    type: "list",
+    message: "Assign him/her a new role",
+    name: "updateEmpRole",
+    choices: [],
+  },
+];
+
 module.exports = {
   returnToMain,
   startQuestion,
   newDepartmentArr,
   newRoleArr,
   newEmployeeArr,
+  updateEmployeeArr,
 };

@@ -20,6 +20,8 @@ const addDepartment = "INSERT INTO departments (name) VALUES (?) ";
 const addEmployee =
   "INSERT INTO employees (first_name, last_name, role_id, manager_id) VALUES (?,?,?,?) ";
 
+const updateEmployee = "UPDATE employees SET role_id = ? WHERE id = ?";
+
 module.exports = {
   employeeView,
   employeeSimpleView,
@@ -29,4 +31,5 @@ module.exports = {
   addRole,
   addDepartment,
   addEmployee,
+  updateEmployee,
 };

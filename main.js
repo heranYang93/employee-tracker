@@ -4,7 +4,6 @@ const inq = require("inquirer");
 const Table = require("cli-table");
 const q = require("./resource/questions");
 const Query = require("./resource/query");
-const { query } = require("express");
 
 const db = sql.createConnection({
   host: process.env.DB_HOST,
@@ -109,6 +108,39 @@ const init = async function () {
         });
         break;
       case "update an employee":
+        db.query(Query.employeeSimpleView, function (er, employeeObjArr) {
+          let employeeFullNameArr = [];
+
+          employeeObjArr.forEach((singleEmployeeObject) => {
+            employeeFullNameArr.push(singleEmployeeObject.full_name);
+          });
+
+          q.updateEmployeeArr[0].choices = employeeFullNameArr;
+
+          db.query(Query.rolesView, function (er, roleObjArr) {
+            let roleArr = [];
+
+            roleObjArr.forEach((roleObjArr) => {
+              roleArr.push(roleObjArr.title);
+            });
+
+            q.updateEmployeeArr[1].choices = roleArr;
+
+            inq.prompt(q.updateEmployeeArr).then((r) => {
+              let employeeId =
+                employeeObjArr[employeeFullNameArr.indexOf(r.updateEmpName)].id;
+              let employeeRole =
+                roleObjArr[roleArr.indexOf(r.updateEmpRole)].role_id;
+              let queryStr = [employeeRole, employeeId];
+              db.query(Query.updateEmployee, queryStr, function (err, res) {
+                err
+                  ? console.error("Error when updating the role!")
+                  : console.log("New role has been assigned");
+              });
+              init();
+            });
+          });
+        });
         break;
       case "exit":
         db.end();
